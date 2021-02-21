@@ -1,7 +1,14 @@
 import React from "react";
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
+    var i = 0;
+    var style = {
+      color: "red"
+    };
     return (
       <div>
         <nav Class="navbar navbar-inverse">
@@ -17,8 +24,8 @@ class Header extends React.Component {
                 <span Class="icon-bar" />
                 <span Class="icon-bar" />
               </button>
-              <a Class="navbar-brand" href="#">
-                Logo
+              <a style={style} Class="navbar-brand" href="#">
+                {this.props.title} {i == 1 ? 1 : 2}
               </a>
             </div>
             <div Class="collapse navbar-collapse" id="myNavbar">

@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div Class="container">
-        <Header />
+        <Header title="My Stie" />
         <div Class="row content">
           <div Class="col-sm-2 sidenav">
             <Left />
