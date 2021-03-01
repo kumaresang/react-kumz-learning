@@ -12,8 +12,12 @@ class App extends React.Component {
         { id: 1, name: "AAA", age: 22 },
         { id: 2, name: "BBB", age: 33 },
         { id: 3, name: "CCC", age: 444 }
-      ]
+      ],
+      content: {
+        data: 0
+      }
     };
+
     //this.AddRow = this.AddRow.bind(this);
   }
   AddRow() {
@@ -28,6 +32,14 @@ class App extends React.Component {
     olddata.push(data);
     console.log(olddata);
     this.setState({ data: olddata });
+  }
+
+  SetContent() {
+    this.setState({
+      content: {
+        data: this.state.content.data + 1
+      }
+    });
   }
 
   render() {
@@ -51,7 +63,8 @@ class App extends React.Component {
             ))}
           </tbody>
         </table>
-        <Content />
+        <button onClick={this.SetContent.bind(this)}>Update Content</button>
+        <Content content={this.state.content.data} />
       </div>
     );
   }
